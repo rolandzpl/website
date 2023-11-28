@@ -1,0 +1,3 @@
+${variable-1} is a good test
+but better than ${variable-1} whould be a
+${variable-2}

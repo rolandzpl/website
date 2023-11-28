@@ -1,0 +1,36 @@
+@page
+@model DynamicPageModel
+
+<div>
+    @Html.Raw(@Model.Content)
+</div>
+
+@section Scripts {
+    <script>
+        @Html.Raw(@Model.Script)
+    </script>
+}
+
+@section Head {
+    <meta name="google-site-verification" content="cA7ATwbXMOhXFmbVZGY9B3zrI8AxTEJfMVkeaEgyvhs" />
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    @if (Model.CanonicalUrl != null)
+    {
+        <link rel="canonical" href="@Model.CanonicalUrl" />
+    }
+    @if (!string.IsNullOrWhiteSpace(@Model.Description))
+    {
+        <meta name="description" content="@Html.Raw(@Model.Description)" />
+    }
+    @foreach (var m in @Model.MetaTags)
+    {
+        if (m.Key.StartsWith("og:"))
+        {
+            <meta property="@m.Key" content="@Html.Raw(@m.Value)" />
+        }
+        else
+        {
+            <meta name="@m.Key" content="@Html.Raw(@m.Value)" />
+        }
+    }
+}

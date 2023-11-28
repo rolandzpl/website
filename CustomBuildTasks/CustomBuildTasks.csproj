@@ -1,0 +1,20 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <OutputPath>$(MSBuildThisFileDirectory)../.build</OutputPath>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Build.Framework" Version="17.7.2" />
+    <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.7.2" />
+  </ItemGroup>
+
+  <Target Name="PrintInfo" BeforeTargets="Build">
+    <MakeDir Directories="$(MSBuildThisFileDirectory)../.build" />
+    <Message Importance="High" Text="This file path is: $(MSBuildThisFileDirectory)" />
+  </Target>
+
+</Project>

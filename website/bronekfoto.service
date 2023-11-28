@@ -1,0 +1,21 @@
+[Unit]
+Description=bronekfoto.pl web server
+
+[Service]
+WorkingDirectory=/var/www/bronekfoto
+ExecStart=/var/www/bronekfoto/website --urls=http://0:5100
+Restart=always
+# Restart service after 10 seconds if the dotnet service crashes:
+RestartSec=10
+KillSignal=SIGINT
+#SyslogIdentifier=dotnet-example
+User=www-data
+Environment=ASPNETCORE_ENVIRONMENT=Production
+Environment=DOTNET_PRINT_TELEMETRY_MESSAGE=false
+Environment=DOTNET_CLI_UI_LANGUAGE=en
+Environment=DOTNET_SYSTEM_GLOBALIZATION_INVARIANT=true
+Environment=Bronekfoto_Smtp__Username=${smtp_username}
+Environment=Bronekfoto_Smtp__Password=${smtp_password}
+
+[Install]
+WantedBy=multi-user.target
