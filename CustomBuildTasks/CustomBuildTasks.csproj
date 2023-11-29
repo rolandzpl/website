@@ -10,11 +10,14 @@
   <ItemGroup>
     <PackageReference Include="Microsoft.Build.Framework" Version="17.7.2" />
     <PackageReference Include="Microsoft.Build.Utilities.Core" Version="17.7.2" />
+    <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
   </ItemGroup>
 
   <Target Name="PrintInfo" BeforeTargets="Build">
     <MakeDir Directories="$(MSBuildThisFileDirectory)../.build" />
-    <Message Importance="High" Text="This file path is: $(MSBuildThisFileDirectory)" />
   </Target>
 
 </Project>

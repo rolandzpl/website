@@ -9,10 +9,10 @@
   <ItemGroup>
     <PackageReference Include="AspNetCore.RouteAnalyzer" Version="0.5.3" />
     <PackageReference Include="CorrelationId" Version="3.0.1" />
-    <!-- <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
+    <PackageReference Include="GitVersion.MsBuild" Version="5.12.0">
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
-    </PackageReference> -->
+    </PackageReference>
     <PackageReference Include="MailKit" Version="4.1.0" />
     <PackageReference Include="Serilog.Enrichers.ClientInfo" Version="2.0.1" />
     <PackageReference Include="Serilog.Enrichers.CorrelationId" Version="3.0.1" />
